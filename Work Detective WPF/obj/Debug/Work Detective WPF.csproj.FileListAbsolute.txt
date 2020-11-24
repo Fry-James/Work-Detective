@@ -1,0 +1,23 @@
+C:\Users\Fry25\source\repos\Work Detective WPF\Work Detective WPF\bin\Debug\Work Detective WPF.exe.config
+C:\Users\Fry25\source\repos\Work Detective WPF\Work Detective WPF\bin\Debug\Work Detective WPF.exe
+C:\Users\Fry25\source\repos\Work Detective WPF\Work Detective WPF\bin\Debug\Work Detective WPF.pdb
+C:\Users\Fry25\source\repos\Work Detective WPF\Work Detective WPF\obj\Debug\Work Detective WPF.csprojAssemblyReference.cache
+C:\Users\Fry25\source\repos\Work Detective WPF\Work Detective WPF\obj\Debug\App.g.cs
+C:\Users\Fry25\source\repos\Work Detective WPF\Work Detective WPF\obj\Debug\Work Detective WPF_MarkupCompile.cache
+C:\Users\Fry25\source\repos\Work Detective WPF\Work Detective WPF\obj\Debug\Work Detective WPF_MarkupCompile.lref
+C:\Users\Fry25\source\repos\Work Detective WPF\Work Detective WPF\obj\Debug\Work Detective WPF.g.resources
+C:\Users\Fry25\source\repos\Work Detective WPF\Work Detective WPF\obj\Debug\Work_Detective_WPF.Properties.Resources.resources
+C:\Users\Fry25\source\repos\Work Detective WPF\Work Detective WPF\obj\Debug\Work Detective WPF.csproj.GenerateResource.cache
+C:\Users\Fry25\source\repos\Work Detective WPF\Work Detective WPF\obj\Debug\Work Detective WPF.csproj.CoreCompileInputs.cache
+C:\Users\Fry25\source\repos\Work Detective WPF\Work Detective WPF\obj\Debug\Work Detective WPF.exe
+C:\Users\Fry25\source\repos\Work Detective WPF\Work Detective WPF\obj\Debug\Work Detective WPF.pdb
+C:\Users\Fry25\source\repos\Work Detective WPF\Work Detective WPF\obj\Debug\MainWindow.g.cs
+C:\Users\Fry25\source\repos\Work Detective WPF\Work Detective WPF\obj\Debug\MainWindow.baml
+C:\Users\Fry25\source\repos\Work Detective WPF\Work Detective WPF\obj\Debug\Employee.g.cs
+C:\Users\Fry25\source\repos\Work Detective WPF\Work Detective WPF\obj\Debug\Employee.baml
+C:\Users\Fry25\source\repos\Work Detective WPF\Work Detective WPF\obj\Debug\Registration.g.cs
+C:\Users\Fry25\source\repos\Work Detective WPF\Work Detective WPF\obj\Debug\Registration.baml
+C:\Users\Fry25\source\repos\Work Detective WPF\Work Detective WPF\obj\Debug\Menu.g.cs
+C:\Users\Fry25\source\repos\Work Detective WPF\Work Detective WPF\obj\Debug\Menu.baml
+C:\Users\Fry25\source\repos\Work Detective WPF\Work Detective WPF\obj\Debug\Position.g.cs
+C:\Users\Fry25\source\repos\Work Detective WPF\Work Detective WPF\obj\Debug\Position.baml
