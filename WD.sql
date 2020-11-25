@@ -7,8 +7,9 @@ create table [dbo].[Authorisation]
 (
 	[ID_Authorisation] [int] not null identity(1,1),
 	[Login] [varchar] (25) not null,
-	[Password] [varchar] (25) not null,
+	[Password] [varchar] (25) not null
 	constraint [PK_Authorisation] primary key clustered ([ID_Authorisation] ASC) on [PRIMARY],
+	constraint [UQ_Login] unique ([Login]) 
 )
 go
 
@@ -43,7 +44,8 @@ Create table [dbo].[Position]
 	[ID_Position] [int] not null identity(1,1),
 	[PositionName] [varchar] (25) not null,
 	[Salary] [int] not null,
-	constraint [PK_Position] primary key clustered ([ID_Position] ASC) on [PRIMARY],
+	constraint [UQ_Position] unique ([PositionName]) ,
+	constraint [PK_Position] primary key clustered ([ID_Position] ASC) on [PRIMARY]
 )
 go
 
@@ -76,13 +78,14 @@ go
 
 create table [dbo].[Employee]
 (
-	[ID_Employee] [int] not null identity(1,1),
+	[Authorisation_ID] [int] not null,
 	[FirstName] [varchar] (25) not null,
 	[MidleName] [varchar] (25) not null,
 	[LastName] [varchar] (25) not null,
 	[Position_ID] [int] not null,
 	[Admin] [bit] not null default (0),
-	constraint [PK_Authorisation] primary key clustered ([ID_Employee] ASC) on [PRIMARY],
+	constraint [PK_Employee] primary key clustered ([Authorisation_ID] ASC) on [PRIMARY],
+	constraint [FK_Autorisation] foreign key ([Authorisation_ID]) references [dbo].[Position] ([ID_Position]),
 	constraint [FK_Position] foreign key ([Position_ID]) references [dbo].[Position] ([ID_Position])
 )
 go
@@ -95,7 +98,7 @@ as
 go
 
 create procedure [dbo].[Employee_Update]
-@ID_Employee [int], @FirstName [varchar] (25), @MidleName [varchar] (25), @LastName [varchar] (25), @Position_ID [int], @Admin [bit]
+@Authorisation_ID [int], @FirstName [varchar] (25), @MidleName [varchar] (25), @LastName [varchar] (25), @Position_ID [int], @Admin [bit]
 as
 	update [dbo].[Employee] set
 	[FirstName] = @FirstName,
@@ -104,15 +107,15 @@ as
 	[Position_ID] = @Position_ID,
 	[Admin] = @Admin
 	where
-		[ID_Employee] = @ID_Employee
+		[Authorisation_ID] = @Authorisation_ID
 go
 
 create procedure [dbo].[Employee_Delete]
-@ID_Employee [int]
+@Authorisation_ID [int]
 as
 	delete from  [dbo].[Employee]
 	where
-		[ID_Employee] = @ID_Employee
+		[Authorisation_ID] = @Authorisation_ID
 go
 
 ----- Îò÷¸ò
@@ -125,14 +128,14 @@ create table [dbo].[Report]
 	[LazyTime]  [varchar] (25) not null,
 	[Autorisation_ID] [int] not null,
 	constraint [PK_Report] primary key clustered ([ID_Report] ASC) on [PRIMARY],
-	constraint [FK_Autorisation] foreign key ([Autorisation_ID]) references [dbo].[Position] ([ID_Position])
+	constraint [FK_Autorisation_Report] foreign key ([Autorisation_ID]) references [dbo].[Position] ([ID_Position])
 )
 go
 
 create procedure [dbo].[Report_Insert]
 	@ReportDate [varchar] (25), @ComputerName [varchar] (25), @CharCount [int], @LazyTime [varchar] (25), @Autorisation_ID [int] 
 as
-	 insert into [dbo].[Authorisation] ([Login], [Password]) 
+	 insert into [dbo].[Report] ([ReportDate], [ComputerName], [CharCount], [LazyTime], [Autorisation_ID]) 
 	 values (@ReportDate, @ComputerName, @CharCount, @LazyTime, @Autorisation_ID)
 go
 
