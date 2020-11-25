@@ -82,6 +82,7 @@ create table [dbo].[Employee]
 	[FirstName] [varchar] (25) not null,
 	[MidleName] [varchar] (25) not null,
 	[LastName] [varchar] (25) not null,
+	[Email] [varchar] (25) not null,
 	[Position_ID] [int] not null,
 	[Admin] [bit] not null default (0),
 	constraint [PK_Employee] primary key clustered ([Authorisation_ID] ASC) on [PRIMARY],
@@ -91,19 +92,20 @@ create table [dbo].[Employee]
 go
 
 create procedure [dbo].[Employee_Insert]
-	@FirstName [varchar] (25), @MidleName [varchar] (25), @LastName [varchar] (25), @Position_ID [int], @Admin [bit]
+	@FirstName [varchar] (25), @MidleName [varchar] (25), @LastName [varchar] (25), @Email [varchar], @Position_ID [int], @Admin [bit]
 as
-	 insert into [dbo].[Employee] ([FirstName], [MidleName], [LastName], [Position_ID], [Admin]) 
-	 values (@FirstName, @MidleName, @LastName, @Position_ID, @Admin)
+	 insert into [dbo].[Employee] ([FirstName], [MidleName], [LastName], [Email], [Position_ID], [Admin]) 
+	 values (@FirstName, @MidleName, @LastName, @Email, @Position_ID, @Admin)
 go
 
 create procedure [dbo].[Employee_Update]
-@Authorisation_ID [int], @FirstName [varchar] (25), @MidleName [varchar] (25), @LastName [varchar] (25), @Position_ID [int], @Admin [bit]
+@Authorisation_ID [int], @FirstName [varchar] (25), @MidleName [varchar] (25), @LastName [varchar] (25),@Email [varchar] (25), @Position_ID [int], @Admin [bit]
 as
 	update [dbo].[Employee] set
 	[FirstName] = @FirstName,
 	[MidleName] = @MidleName,
 	[LastName] = @LastName,
+	[Email] = @Email,
 	[Position_ID] = @Position_ID,
 	[Admin] = @Admin
 	where
